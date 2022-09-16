@@ -25,7 +25,7 @@ test-all: venv ## run tests with all Python versions; needs python versions alre
 	tox -p
 
 coverage: venv ## check code coverage quickly with the default Python
-	venv/bin/coverage run --source once -m pytest --xdoc -rx
+	venv/bin/coverage run --source once_only -m pytest --xdoc -rx
 	venv/bin/coverage report -m
 	venv/bin/coverage html
 
@@ -38,7 +38,7 @@ servedocs: docs ## compile the docs watching for changes
 
 clean: ## clean up after dist
 	rm -rf dist/
-	rm -rf once.egg-info/
+	rm -rf once_only.egg-info/
 	rm -rf build/
 
 release: dist ## package and upload a release

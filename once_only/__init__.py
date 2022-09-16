@@ -12,7 +12,7 @@ import appdirs
 __version__ = "0.1.0"
 
 
-STATE_DIR = pathlib.Path(appdirs.user_state_dir("once", "mikapfl"))
+STATE_DIR = pathlib.Path(appdirs.user_state_dir("once_only", "mikapfl"))
 
 
 class Once:

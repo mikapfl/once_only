@@ -15,7 +15,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/mikapfl/once/issues.
+Report bugs at https://github.com/mikapfl/once_only/issues.
 
 If you are reporting a bug, please include:
 
@@ -32,13 +32,13 @@ wanted" is open to whoever wants to implement it.
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-`once` could always use more and better documentation!
+`once_only` could always use more and better documentation!
 
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
 The best way to send feedback is to file an issue at
-https://github.com/pflueger/once/issues.
+https://github.com/pflueger/once_only/issues.
 
 If you are proposing a feature:
 
@@ -49,17 +49,17 @@ If you are proposing a feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `once` for local development.
+Ready to contribute? Here's how to set up `once_only` for local development.
 
-1. Fork the `once` repo on GitHub.
+1. Fork the `once_only` repo on GitHub.
 2. Clone your fork locally::
 
-    $ git clone git@github.com:your_name_here/once.git
+    $ git clone git@github.com:your_name_here/once_only.git
 
 3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper
    installed, this is how you set up your fork for local development::
 
-    $ cd once/
+    $ cd once_only/
     $ make virtual-environment
     $ make install-pre-commit
 

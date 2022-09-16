@@ -4,7 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = ../venv/bin/python -msphinx
-SPHINXPROJ    = once
+SPHINXPROJ    = once_only
 SOURCEDIR     = .
 BUILDDIR      = _build
 

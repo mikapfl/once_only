@@ -1,5 +1,5 @@
-Welcome to once's documentation!
-================================
+Welcome to once_only's documentation!
+=====================================
 
 .. toctree::
    :maxdepth: 2

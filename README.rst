@@ -1,30 +1,30 @@
-====
-Once
-====
+=========
+once_only
+=========
 
 
-.. image:: https://img.shields.io/pypi/v/once.svg
-        :target: https://pypi.python.org/pypi/once
+.. image:: https://img.shields.io/pypi/v/once_only.svg
+        :target: https://pypi.python.org/pypi/once_only
 
-.. image:: https://readthedocs.org/projects/once/badge/?version=latest
-        :target: https://once.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/once_only/badge/?version=latest
+        :target: https://once_only.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
 Run a python script or function only once in a given time frame.
 
 If, for example, you have a script or service which might be called frequently,
 but you want to report errors only once daily to not annoy people too much,
-`once` is the library for you.
+`once_only` is the library for you.
 
 Quickstart
 ----------
 
 Suppose you want your script to complain, but not more than once a day.
-``once.daily`` is the tool you need::
+``once_only.daily`` is the tool you need::
 
-    import once
+    import once_only
 
-    @once.daily
+    @once_only.daily
     def complain():
         print("This is not right!")
 
@@ -34,27 +34,27 @@ most once a day, so that at least 24 hours are between two complaints.
 
 If you want to complain more or less often, there are other variants:
 
-=================  ==========
-object             time delta
-=================  ==========
-``once.weekly``    1 week
-``once.daily``     1 day
-``once.hourly``    1 hour
-``once.minutely``  1 minute
-``once.Once()``    custom ``datetime.timedelta``
-=================  ==========
+======================  ==========
+object                  time delta
+======================  ==========
+``once_only.weekly``    1 week
+``once_only.daily``     1 day
+``once_only.hourly``    1 hour
+``once_only.minutely``  1 minute
+``once_only.Once()``    custom ``datetime.timedelta``
+======================  ==========
 
 Advanced Usage
 --------------
 
-Instead of using a ``once.Once`` object as a decorator, you can also access
+Instead of using a ``once_only.Once`` object as a decorator, you can also access
 it directly via the ``check_ready()`` and
 ``check_ready_trigger()`` functions::
 
-    import once
+    import once_only
     import datetime
 
-    once_every_two_hours = once.Once(datetime.timedelta(hours=2))
+    once_every_two_hours = once_only.Once(datetime.timedelta(hours=2))
 
     if once_every_two_hours.check_ready():
         print("More than two hours have passed since last run!")
@@ -62,22 +62,22 @@ it directly via the ``check_ready()`` and
     if not_a_dry_run and once_every_two_hours.check_ready_trigger():
         print("Triggering timer and running!")
 
-Note that all instances of ``once.Once`` with the same time delta share the
+Note that all instances of ``once_only.Once`` with the same time delta share the
 same timer, but those with different time deltas don't share the timer.
 So, if you have never run anything before, this::
 
-    import once
+    import once_only
     import datetime
 
-    @once.minutely
+    @once_only.minutely
     def run_minutely():
         print("minutely")
 
-    @once.hourly
+    @once_only.hourly
     def run_hourly():
         print("hourly")
 
-    @once.Once(datetime.timedelta(minutes=60))
+    @once_only.Once(datetime.timedelta(minutes=60))
     def run_every_60_minutes():
         print("60 minutes")
 
@@ -90,7 +90,7 @@ will print "minutely" and "hourly", but not "60 minutes" because
 already be triggered by ``run_hourly`` and ``run_every_60_minutes`` will not be
 run.
 
-Further documentation can be found at: https://once.readthedocs.io.
+Further documentation can be found at: https://once_only.readthedocs.io.
 
 License
 -------

@@ -4,6 +4,6 @@ API
 Module contents
 ===============
 
-.. automodule:: once
+.. automodule:: once_only
    :members:
    :show-inheritance:

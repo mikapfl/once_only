@@ -7,13 +7,13 @@ Installation
 Stable release
 --------------
 
-To install `once`, run this command in your terminal:
+To install `once_only`, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install once
+    $ pip install once_only
 
-This is the preferred method to install `once`, as it will always install
+This is the preferred method to install `once_only`, as it will always install
 the most recent stable release.
 
 If you don't have `pip`_ installed, this `Python installation guide`_ can guide
@@ -26,19 +26,19 @@ you through the process.
 From sources
 ------------
 
-The sources for `once` can be downloaded from the `Github repo`_.
+The sources for `once_only` can be downloaded from the `Github repo`_.
 
 You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/mikapfl/once
+    $ git clone git://github.com/mikapfl/once_only
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl -OJL https://github.com/mikapfl/once/tarball/master
+    $ curl -OJL https://github.com/mikapfl/once_only/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -47,5 +47,5 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/mikapfl/once
-.. _tarball: https://github.com/mikapfl/once/tarball/master
+.. _Github repo: https://github.com/mikapfl/once_only
+.. _tarball: https://github.com/mikapfl/once_only/tarball/master

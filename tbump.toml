@@ -1,5 +1,5 @@
 # Uncomment this if your project is hosted on GitHub:
-github_url = "https://github.com/mikapfl/once/"
+github_url = "https://github.com/mikapfl/once_only/"
 
 [version]
 current = "0.1.0"
@@ -27,7 +27,7 @@ src = "setup.cfg"
 search = 'version = {current_version}'
 
 [[file]]
-src = "once/__init__.py"
+src = "once_only/__init__.py"
 search = '__version__ = "{current_version}"'
 
 # You can specify a list of commands to
@@ -47,4 +47,4 @@ cmd = "venv/bin/python update_changelog.py {new_version}"
 
 [[after_push]]
 name = "release on github"
-cmd = "gh release create --repo mikapfl/once v{new_version} --title 'once Version {new_version}' --notes-file .changelog_latest_version.rst"
+cmd = "gh release create --repo mikapfl/once_only v{new_version} --title 'once_only Version {new_version}' --notes-file .changelog_latest_version.rst"
