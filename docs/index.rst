@@ -1,5 +1,5 @@
-Welcome to climate_category's documentation!
-============================================
+Welcome to once's documentation!
+================================
 
 .. toctree::
    :maxdepth: 2
@@ -7,7 +7,6 @@ Welcome to climate_category's documentation!
 
    readme
    installation
-   usage
    api
    contributing
    credits

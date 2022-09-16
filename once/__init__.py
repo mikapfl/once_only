@@ -3,8 +3,8 @@
 import datetime
 import functools
 import logging
-import pickle
 import pathlib
+import pickle
 import typing
 
 import appdirs
@@ -15,11 +15,19 @@ __version__ = "0.1.0"
 STATE_DIR = pathlib.Path(appdirs.user_state_dir("once", "mikapfl"))
 
 
-class Once(object):
-    """True only once in the given time interval."""
-    def __init__(self, timedelta: datetime.timedelta, file: typing.Union[pathlib.Path, None] = None):
+class Once:
+    """Class for time keeping, enabling you to run functions only once in a given
+    time span."""
+
+    def __init__(
+        self,
+        timedelta: datetime.timedelta,
+        file: typing.Union[pathlib.Path, None] = None,
+    ):
         if file is None:
-            microseconds = int(round(timedelta.total_seconds() * 1000 * 1000 + timedelta.microseconds))
+            microseconds = int(
+                round(timedelta.total_seconds() * 1000 * 1000 + timedelta.microseconds)
+            )
             file = STATE_DIR / f"timestamp_{microseconds:d}.pck"
         self.file = file
         self.timedelta = timedelta
@@ -31,7 +39,9 @@ class Once(object):
             with self.file.open("rb") as fd:
                 return pickle.load(fd)
         except IOError:
-            logging.debug(f'No database for timedelta {self.timedelta} found, using 1.1.1970')
+            logging.debug(
+                f"No database for timedelta {self.timedelta} found, using 1.1.1970"
+            )
             return datetime.datetime.fromtimestamp(0)
 
     def check_ready(self) -> bool:
@@ -63,17 +73,21 @@ class Once(object):
 
     def __call__(self, func):
         """Act as a decorator on func, only running it at most once in the timedelta."""
+
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
             if self.check_ready_trigger():
                 func(*args, **kwargs)
+
         return wrapper
 
     def __repr__(self):
-        return f"<Once timedelta={self.timedelta} last_trigger={self.last_trigger_time}>"
+        return (
+            f"<Once timedelta={self.timedelta} last_trigger={self.last_trigger_time}>"
+        )
 
 
 weekly = Once(datetime.timedelta(7))
 daily = Once(datetime.timedelta(1))
-hourly = Once(datetime.timedelta(0, 60*60))
+hourly = Once(datetime.timedelta(0, 60 * 60))
 minutely = Once(datetime.timedelta(0, 60))
