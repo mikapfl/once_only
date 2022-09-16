@@ -9,7 +9,7 @@ import typing
 
 import appdirs
 
-__version__ = "0.1.0"
+__version__ = "1.0.0"
 
 
 STATE_DIR = pathlib.Path(appdirs.user_state_dir("once_only", "mikapfl"))
